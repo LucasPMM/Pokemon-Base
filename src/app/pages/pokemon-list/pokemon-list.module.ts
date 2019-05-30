@@ -3,12 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { PokemonListRoutingModule } from './pokemon-list-routing.module';
 import { PokemonListComponent } from './pokemon-list.component';
+import { PokemonItemComponent } from 'src/app/components/pokemon-item/pokemon-item.component';
 
 @NgModule({
-  declarations: [PokemonListComponent],
+  declarations: [PokemonListComponent, PokemonItemComponent],
   imports: [
     CommonModule,
-    PokemonListRoutingModule
+    PokemonListRoutingModule,
   ]
 })
 export class PokemonListModule { }

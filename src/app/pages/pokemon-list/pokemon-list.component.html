@@ -1,3 +1,8 @@
 <p>
   <button [routerLink]="['/pokemon-detail', 0]">Detalhe do pokemon</button>
+
+  <ng-container *ngFor="let item of [1,2,3,4]">
+    <app-pokemon-item></app-pokemon-item>
+  </ng-container>
+  
 </p>
