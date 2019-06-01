@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PokemonListComponent implements OnInit {
 
+  public searchContent: string = '';
+
   constructor() { }
 
   ngOnInit() {

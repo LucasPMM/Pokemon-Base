@@ -1,0 +1,15 @@
+.content-container {
+    padding: 30px;
+    img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+    }
+    &:hover{
+        opacity: 0.6;
+        transform: scale(1.1);
+        background: #04040436;
+        border-radius: 10px;
+        transition-duration: 0.3s;
+    }
+}

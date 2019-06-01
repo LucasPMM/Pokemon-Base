@@ -6,7 +6,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   title = 'Pokemon-Base';
-  ngOnInit() {
 
+  private playAudio() {
+    const audio = new Audio();
+    audio.src = 'assets/audio/pokemon.mp3';
+    audio.load();
+    audio.play();
+  }
+
+  ngOnInit() {
+    // this.playAudio();
   }
 }
