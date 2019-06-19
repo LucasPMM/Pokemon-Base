@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PokemonEvolutionsComponent implements OnInit {
 
+  public pokemonEvolutions = [1, 2, 3];
+
   constructor() { }
 
   ngOnInit() {

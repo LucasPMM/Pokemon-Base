@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { PokemonItemComponent } from './pokemon-item/pokemon-item.component';
 import { PokemonTypeComponent } from './pokemon-type/pokemon-type.component';
 import { PokemonEvolutionsComponent } from './pokemon-evolutions/pokemon-evolutions.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
@@ -12,6 +13,7 @@ import { PokemonEvolutionsComponent } from './pokemon-evolutions/pokemon-evoluti
     FormsModule,
     ReactiveFormsModule,
     PipesModule,
+    RouterModule,
   ],
   declarations: [
     PokemonItemComponent,
