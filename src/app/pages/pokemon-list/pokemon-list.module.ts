@@ -3,18 +3,16 @@ import { CommonModule } from '@angular/common';
 
 import { PokemonListRoutingModule } from './pokemon-list-routing.module';
 import { PokemonListComponent } from './pokemon-list.component';
-import { PokemonItemComponent } from 'src/app/components/pokemon-item/pokemon-item.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PipesModule } from 'src/app/pipes/pipes.module';
-import { PokemonTypeComponent } from 'src/app/components/pokemon-type/pokemon-type.component';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   declarations: [
     PokemonListComponent,
-    PokemonItemComponent,
-    PokemonTypeComponent,
   ],
   imports: [
+    ComponentsModule,
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
