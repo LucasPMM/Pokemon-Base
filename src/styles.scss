@@ -9,3 +9,15 @@
 .content-container {
     margin-bottom: 10%;
 }
+
+pre {
+    outline: 1px solid #ccc;
+    padding: 5px;
+    margin: 5px;
+    margin-top: 5%;
+}
+.string { color: green; }
+.number { color: darkorange; }
+.boolean { color: blue; }
+.null { color: magenta; }
+.key { color: red; }
