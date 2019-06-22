@@ -6,6 +6,10 @@
       <div class="search-bar">
         <input placeholder="Busque seu pokemon aqui..." type="text" [(ngModel)]="searchContent">
       </div>
+
+      <div [routerLink]="['/pokemon-queries']" class="query-container">
+        <button class="btn">Faça suas próprias consultas</button>
+      </div>
     </div>
   </div>    
 
