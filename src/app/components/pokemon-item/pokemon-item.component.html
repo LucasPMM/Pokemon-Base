@@ -1,12 +1,12 @@
 <div class="content-container">
-  <img src="assets/images/default-pokemon.jpg">
+  <img [src]="pokemon?.img ? pokemon?.img : 'assets/images/default-pokemon.jpg'">
 
   <div class="pokemon-info">
-    <p class="pokemon-number">Nº {{ formatedNumber }}</p>
-    <p class="pokemon-name">Pikachu</p>
-
+    <p class="pokemon-number">Nº {{ pokemon?.formatedId }}</p>
+    <p class="pokemon-name">{{ pokemon?.nome }}</p>
+<!-- 
     <div class="row types-container">
       <app-pokemon-type [types]="['Eletric', 'Fire', 'Grass', 'Grass', 'Grass']"></app-pokemon-type>
-    </div>
+    </div> -->
   </div>
 </div>
