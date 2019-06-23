@@ -14,81 +14,82 @@
     <span class="pokemon-number">Nº002</span>
   </div>
 
-
-  <div class="container">
-    <div class="pokemon-container flex-container">
-      <div class="pokemon-img">
-        <img src="assets/images/default-pokemon.jpg">  
-      </div>
-      <div class="pokemon-informations">
-        <p>Bulbasaur can be seen napping in bright sunlight. There is a seed on its back. By soaking up the sun's rays, the seed grows progressively larger.</p>
-        <div class="flex-container">
-          <div>
-            <p class="description">Altura</p>
-            <p class="info">0,7 m</p>
-  
-            <p class="description">Peso</p>
-            <p class="info">6,9 kg</p>
+  <div [style.background]="'url(/assets/images/website-background.jpg' + ')'">
+    <div class="container" style="background: white;">
+      <div class="pokemon-container flex-container">
+        <div class="pokemon-img">
+          <img src="assets/images/default-pokemon.jpg">  
+        </div>
+        <div class="pokemon-informations">
+          <p>Bulbasaur can be seen napping in bright sunlight. There is a seed on its back. By soaking up the sun's rays, the seed grows progressively larger.</p>
+          <div class="flex-container">
+            <div>
+              <p class="description">Altura</p>
+              <p class="info">0,7 m</p>
+    
+              <p class="description">Peso</p>
+              <p class="info">6,9 kg</p>
+            </div>
+            <div>
+              <p class="description">Categoria</p>
+              <p class="info">Seed</p>
+    
+              <p class="description">Habilidades</p>
+              <p class="info">Overgrow</p>
+            </div>  
           </div>
-          <div>
-            <p class="description">Categoria</p>
-            <p class="info">Seed</p>
-  
-            <p class="description">Habilidades</p>
-            <p class="info">Overgrow</p>
-          </div>  
         </div>
       </div>
-    </div>
-  
-    <div class="pokemon-data pokemon-container flex-container">
-      <div>
+    
+      <div class="pokemon-data pokemon-container flex-container">
         <div>
-          <div style="display: block">
-            <canvas baseChart
-              height="300px"
-              [datasets]="barChartData"
-              [labels]="barChartLabels"
-              [options]="barChartOptions"
-              [plugins]="barChartPlugins"
-              [legend]="barChartLegend"
-              [chartType]="barChartType">
-            </canvas>
+          <div>
+            <div style="display: block">
+              <canvas baseChart
+                height="300px"
+                [datasets]="barChartData"
+                [labels]="barChartLabels"
+                [options]="barChartOptions"
+                [plugins]="barChartPlugins"
+                [legend]="barChartLegend"
+                [chartType]="barChartType">
+              </canvas>
+            </div>
+          </div>
+        </div>
+    
+        <div class="pokemon-types">
+          <p>Tipo(s)</p>
+          <div class="row types-container">
+            <span class="col-sm-12 col-md-4">
+              <app-pokemon-type type="Eletric" background="yellow" color="black"></app-pokemon-type>
+            </span>
+            <span class="col-sm-12 col-md-4">
+              <app-pokemon-type type="Fire" background="orange" color="black"></app-pokemon-type>
+            </span>
+            <span class="col-sm-12 col-md-4">
+              <app-pokemon-type type="Grass" background="green" color="white"></app-pokemon-type>
+            </span>
+          </div>
+    
+          <p>Fraqueza(s)</p>
+          <div class="row types-container">
+            <span class="col-sm-12 col-md-4">
+              <app-pokemon-type type="Eletric" background="yellow" color="black"></app-pokemon-type>
+            </span>
+            <span class="col-sm-12 col-md-4">
+              <app-pokemon-type type="Fire" background="orange" color="black"></app-pokemon-type>
+            </span>
+            <span class="col-sm-12 col-md-4">
+              <app-pokemon-type type="Grass" background="green" color="white"></app-pokemon-type>
+            </span>
           </div>
         </div>
       </div>
   
-      <div class="pokemon-types">
-        <p>Tipo(s)</p>
-        <div class="row types-container">
-          <span class="col-sm-12 col-md-4">
-            <app-pokemon-type type="Eletric" background="yellow" color="black"></app-pokemon-type>
-          </span>
-          <span class="col-sm-12 col-md-4">
-            <app-pokemon-type type="Fire" background="orange" color="black"></app-pokemon-type>
-          </span>
-          <span class="col-sm-12 col-md-4">
-            <app-pokemon-type type="Grass" background="green" color="white"></app-pokemon-type>
-          </span>
-        </div>
-  
-        <p>Fraqueza(s)</p>
-        <div class="row types-container">
-          <span class="col-sm-12 col-md-4">
-            <app-pokemon-type type="Eletric" background="yellow" color="black"></app-pokemon-type>
-          </span>
-          <span class="col-sm-12 col-md-4">
-            <app-pokemon-type type="Fire" background="orange" color="black"></app-pokemon-type>
-          </span>
-          <span class="col-sm-12 col-md-4">
-            <app-pokemon-type type="Grass" background="green" color="white"></app-pokemon-type>
-          </span>
-        </div>
+      <div class="evolutions">
+        <app-pokemon-evolutions></app-pokemon-evolutions>
       </div>
-    </div>
-
-    <div class="evolutions">
-      <app-pokemon-evolutions></app-pokemon-evolutions>
     </div>
   </div>
 
