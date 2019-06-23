@@ -759,3 +759,218 @@ $bw3:                -40px 0px #fff,-30px 0px #fff,-20px 0px #fff,-10px 0px #fff
   100%{box-shadow: $bw1; background: #fff;}
 }
 
+body {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  background-color: #8EA4D2;
+}
+
+.container {
+  width: 100%;
+  padding-top: 350px;
+  animation: hideHim 4s infinite;
+}
+
+.gastly {
+  position: relative;
+  width: 270px;
+  height: 260px;
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #381b42;
+  box-shadow: 5px 5px 5px #23022e;
+  border-radius: 50%;
+  border: 5px solid black;
+  animation: inner-circle 7s linear infinite;
+}
+
+.pokemon {
+  animation: circle 7s linear infinite;
+  transform-origin: 55% 100px;
+}
+
+.eyes {
+  position: absolute;
+  padding-top: 10px;
+  animation: blink 4s infinite;
+}
+
+.eyes__eye {
+  position: relative;
+  height: 90px;
+  width: 180px;
+  background-color: white;
+  border: 3px solid black;
+}
+
+.eyes__eye--left {
+  top: 70px;
+  right: 60px;
+  border-bottom-left-radius: 200px;
+  border-bottom-right-radius: 200px;
+  transform: rotate(45deg);
+  box-shadow: inset -16px 1px 6px #D4C2FC;
+}
+
+.eyes__eye--right {
+  top: -15px;
+  border-bottom-right-radius: 200px;
+  border-bottom-left-radius: 200px;
+  transform: rotate(-45deg);
+  margin-left: 155px;
+  box-shadow: inset -10px -10px 6px #D4C2FC;
+}
+
+.pupil {
+  position: relative;
+  height: 29px;
+  width: 10px;
+  background-color: black;
+  border-radius: 50%;
+}
+
+.eyes__eye--left--pupil {
+  transform: rotate(-55deg);
+  top: 20px;
+  left: 140px;
+}
+
+.eyes__eye--right--pupil {
+  transform: rotate(55deg);
+  top: 6px;
+  left: 22px;
+}
+
+.mouth {
+  position: absolute;
+  height: 20px;
+  width: 100px;
+  background-color: #F47983;
+  border-bottom-right-radius: 90%;
+  border-bottom-left-radius: 90%;
+  border: 2px solid #F62459;
+  margin-left: 90px;
+  margin-top: 200px;
+}
+
+.tooth {
+  width: 0; 
+  height: 0; 
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 25px solid white;
+}
+
+.teeth__tooth--left {
+  margin-left: 10px;
+  margin-top: 2px;
+}
+
+.teeth__tooth--right {
+  margin-left: 60px;
+  margin-top: -26px;
+}
+
+.gas {
+  top: -200px;
+  left: 30px;
+  margin: 0 auto;
+  background: #7D70BA;
+  width: 340px;
+  height: 340px;
+  position: relative;
+  transform: rotate(20deg);
+  z-index: -1;
+  border-radius: 10%;
+  
+  animation-name: spin;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.gas:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 340px;
+  height: 340px;
+  background: #7D70BA;
+  transform: rotate(130deg);
+  z-index: -1;
+  border-radius: 8%;
+}
+
+.gas:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 340px;
+  height: 340px;
+  background: #7D70BA;
+  transform: rotate(60deg);
+  z-index: -1;
+  border-radius: 18%;
+}
+
+.shadow {
+  height: 20px;
+  width: 400px;
+  background-color: black;
+  border-radius: 50%;
+  margin: 0 auto;
+  animation: move 7s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+@keyframes circle {
+    from { transform:rotate(0deg); }
+    to { transform:rotate(360deg); }
+}
+
+@keyframes inner-circle {
+    from { transform:rotate(0deg); }
+    to { transform:rotate(-360deg); }
+}
+
+@keyframes move {
+  from {
+    margin-left: 35%;
+  }
+  
+ 50% {
+   margin-left: 55%;
+   width: 15%;
+  }
+ to {
+    margin-left: 35%;
+  }
+}
+
+@keyframes hideHim {
+    99% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes blink {
+    4% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
