@@ -1,8 +1,15 @@
+<nav class="navbar">
+  <div class="container-fluid">
+    <div class="navbar-header navbar-default">
+      <div>
+        <a class="mybtn btn btn-link btn-xs" [routerLink]="['/pokemon-list']"><i class="fa fa-arrow-circle-o-left" style="font-size:2.5rem;"></i></a>
+        <div class="navbar-brand">Retornar a listagem</div>
+      </div>
+    </div>
+  </div>           
+</nav>
 
 <div class="container">
-  <div [routerLink]="['/pokemon-list']">
-    <button class="btn"><i class="fa fa-arrow-left"></i> Retornar a listagem</button>
-  </div>
   <div class="row">
     
     <div id="textarea-container" class="editor-holder">

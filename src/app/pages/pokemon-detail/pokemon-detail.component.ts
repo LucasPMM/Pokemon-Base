@@ -28,9 +28,14 @@ export class PokemonDetailComponent implements OnInit {
   public barChartLegend = true;
   public barChartPlugins = [pluginDataLabels];
 
-  public barChartData: ChartDataSets[] = [
-    { borderColor: '#30a7d7', backgroundColor: '#30a7d7', data: [65, 59, 80, 81, 56, 55], label: 'Dados do pokemon' },
-  ];
+  public barChartData: ChartDataSets[] = [{
+    hoverBackgroundColor: '#44b5e2',
+    hoverBorderColor: '#44b5e2',
+    borderColor: '#30a7d7',
+    backgroundColor: '#30a7d7',
+    data: [65, 59, 80, 81, 56, 55],
+    label: 'Dados do pokemon',
+  }];
 
   constructor() { }
 

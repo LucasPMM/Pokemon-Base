@@ -1,22 +1,3 @@
-.header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    div {
-        padding: 10px;
-        background-color: #a4a4a4;
-        width: 49%;
-    }
-    .previous-pokemon {
-        border-bottom-right-radius: 50px;
-    }
-    .next-pokemon {
-        border-bottom-left-radius: 50px;
-        text-align: right;
-    }
-}
-
 .round:hover {
     background-color: #ddd;
     color: black;
@@ -50,6 +31,15 @@
         margin-left: 0.125em;
     }
 }
+
+.back-button {
+    margin-left: 7%;
+    float: left;
+    margin-top: 0.5em;
+    width: 100%;
+    word-break: break-word;
+}
+
 
 .pokemon-img {
     img {

@@ -1,13 +1,7 @@
 <div class="content-container">
-  <div class="header">
-    <div class="previous-pokemon">
-      <span [routerLink]="['/']" class="round">&#8249;</span>
-      Voltar a listagem
-    </div>
-    <div class="next-pokemon">
-      Nº002 Ivysaur
-      <a href="#" class="round">&#8250;</a>
-    </div>
+  <div class="back-button">
+    <a class="mybtn btn btn-link btn-xs" [routerLink]="['/pokemon-list']"><i class="fa fa-arrow-circle-o-left" style="font-size:2.5rem;"></i></a>
+    <div class="navbar-brand">Retornar a listagem</div>
   </div>
   <div class="pokemon-name">
     Pikachu 
