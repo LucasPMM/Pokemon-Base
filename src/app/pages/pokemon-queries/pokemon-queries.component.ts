@@ -1,5 +1,7 @@
 import { Component, OnInit, OnChanges } from '@angular/core';
 import { HighlightJS } from 'ngx-highlightjs';
+import { WrapperService } from 'src/app/services/wrapper/wrapper.service';
+import { ToastrService } from 'ngx-toastr';
 // import * as $ from './textarea';
 
 @Component({
@@ -9,13 +11,13 @@ import { HighlightJS } from 'ngx-highlightjs';
 })
 export class PokemonQueriesComponent implements OnInit, OnChanges {
 
-  public textareaContent = 'select * FROM USERS WHERE NAME = "jAO" ';
-
-  public jsonTest = {a:1, 'b':'foo', c:[false,'false',null, 'null', {d:{e:1.3e5,f:'1.3e5'}}]};
+  public textareaContent = 'SELECT * FROM Pokemon WHERE nome ="Pikachu"';
   public formatedJson = null;
 
   constructor(
+    private wrapperService: WrapperService,
     private highlightservice: HighlightJS,
+    private toastr: ToastrService,
   ) { }
 
   public fullScreen(event: Event) {
@@ -37,9 +39,19 @@ export class PokemonQueriesComponent implements OnInit, OnChanges {
       .replace(/'/g, '&#039;');
   }
 
-  public sendQuery() {
-    console.log('comunicar com o banco');
-    this.showJson();
+  public async sendQuery(): Promise<void> {
+    try  {
+      const res = await this.wrapperService.getDbData(this.textareaContent);
+      if (!Object.values(res).length) {
+        this.formatedJson = null;
+        // tslint:disable-next-line: no-string-throw
+        throw('Empty response');
+      }
+      this.showJson(res);
+      this.toastr.success('', 'Sucesso!');
+    } catch (e) {
+      this.toastr.error('Infelizmente sua consulta não retornou nenhum resultado', 'Resposta vazia');
+    }
   }
 
   public hightlightSyntax() {
@@ -79,12 +91,11 @@ export class PokemonQueriesComponent implements OnInit, OnChanges {
     });
   }
 
-  private showJson() {
-    const strJson = JSON.stringify(this.jsonTest, undefined, 4);
+  private showJson(serverResponse: any) {
+    const strJson = JSON.stringify(serverResponse, undefined, 4);
     this.formatedJson = this.syntaxHighlightJson(strJson);
 
     const el = document.getElementById('query-result');
-    console.log('el', el, this.formatedJson);
     if (!el) { return; }
     el.innerHTML = this.formatedJson;
 

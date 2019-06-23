@@ -12,7 +12,9 @@ import typescript from 'highlight.js/lib/languages/typescript';
 import SQL from 'highlight.js/lib/languages/sql';
 import { WrapperService } from './services/wrapper/wrapper.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 export function hljsLanguages() {
   return [
@@ -30,8 +32,10 @@ export function hljsLanguages() {
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     ChartsModule,
     HttpClientModule,
+    ToastrModule.forRoot(),
     ComponentsModule,
     HighlightModule.forRoot({
       languages: hljsLanguages

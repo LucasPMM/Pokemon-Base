@@ -43,6 +43,7 @@
     "ng2-charts": "2.2.3",
     "ngx-bootstrap": "^4.2.0",
     "ngx-highlightjs": "^3.0.3",
+    "ngx-toastr": "^10.0.4",
     "path": "^0.12.7",
     "protractor": "~5.4.0",
     "rxjs": "~6.3.3",
