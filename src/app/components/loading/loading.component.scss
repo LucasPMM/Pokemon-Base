@@ -1,0 +1,671 @@
+/**
+* Variables
+* ---------
+*/
+$stage-background : #333;
+$border           : #000;
+$orange-1         : #F28500;
+$orange-2         : #EB6A00;
+$yellow           : #FAEA00;
+$red              : #DB472A;
+$grey             : #E5E4EA;
+
+$salameche-box-shadow: 
+  /* Row 1 */
+  40px 0px 0px $border,
+  50px 0px 0px $border,
+  60px 0px 0px $border,
+  70px 0px 0px $border,
+  170px 0px 0px $border,
+
+  /* Row 2 */
+  30px 10px 0px $border,
+  40px 10px 0px $orange-1,
+  50px 10px 0px $orange-1,
+  60px 10px 0px $orange-1,
+  70px 10px 0px $orange-1,
+  80px 10px 0px $border,
+  160px 10px 0px $border,
+  170px 10px 0px $red,
+  180px 10px 0px $border,
+
+  /* Row 3 */
+  20px 20px 0px $border,
+  30px 20px 0px $orange-1,
+  40px 20px 0px $orange-1,
+  50px 20px 0px $orange-1,
+  60px 20px 0px $orange-1,
+  70px 20px 0px $orange-1,
+  80px 20px 0px $orange-1,
+  90px 20px 0px $border,
+  160px 20px 0px $border,
+  170px 20px 0px $red,
+  180px 20px 0px $red,
+  190px 20px 0px $border,
+
+  /* Row 4 */
+  20px 30px 0px $border,
+  30px 30px 0px $orange-1,
+  40px 30px 0px $orange-1,
+  50px 30px 0px $orange-1,
+  60px 30px 0px $orange-1,
+  70px 30px 0px $orange-1,
+  80px 30px 0px $orange-1,
+  90px 30px 0px $border,
+  160px 30px 0px $border,
+  170px 30px 0px $red,
+  180px 30px 0px $red,
+  190px 30px 0px $border,
+
+  /* Row 5 */
+  10px 40px 0px $border,
+  20px 40px 0px $orange-1,
+  30px 40px 0px $orange-1,
+  40px 40px 0px $orange-1,
+  50px 40px 0px $orange-1,
+  60px 40px 0px $orange-1,
+  70px 40px 0px $orange-1,
+  80px 40px 0px $orange-1,
+  90px 40px 0px $orange-2,
+  100px 40px 0px $border,
+  150px 40px 0px $border,
+  160px 40px 0px $red,
+  170px 40px 0px $red,
+  180px 40px 0px $red,
+  190px 40px 0px $red,
+  200px 40px 0px $border,
+
+  /* Row 6 */
+  0px 50px 0px $border,
+  10px 50px 0px $orange-1,
+  20px 50px 0px $orange-1,
+  30px 50px 0px $orange-1,
+  40px 50px 0px $orange-1,
+  50px 50px 0px $grey,
+  60px 50px 0px $border,
+  70px 50px 0px $orange-1,
+  80px 50px 0px $orange-1,
+  90px 50px 0px $orange-2,
+  100px 50px 0px $border,
+  150px 50px 0px $border,
+  160px 50px 0px $red,
+  170px 50px 0px $red,
+  180px 50px 0px $yellow,
+  190px 50px 0px $red,
+  200px 50px 0px $border,
+
+  /* Row 7 */
+  0px 60px 0px $border,
+  10px 60px 0px $orange-1,
+  20px 60px 0px $orange-1,
+  30px 60px 0px $orange-1,
+  40px 60px 0px $orange-1,
+  50px 60px 0px $border,
+  60px 60px 0px $border,
+  70px 60px 0px $orange-1,
+  80px 60px 0px $orange-2,
+  90px 60px 0px $orange-2,
+  100px 60px 0px $orange-2,
+  110px 60px 0px $border,
+  150px 60px 0px $border,
+  160px 60px 0px $red,
+  170px 60px 0px $yellow,
+  180px 60px 0px $yellow,
+  190px 60px 0px $red,
+  200px 60px 0px $border,
+
+  /* Row 8 */
+  0px 70px 0px $border,
+  10px 70px 0px $orange-1,
+  20px 70px 0px $orange-1,
+  30px 70px 0px $orange-1,
+  40px 70px 0px $orange-1,
+  50px 70px 0px $border,
+  60px 70px 0px $border,
+  70px 70px 0px $orange-1,
+  80px 70px 0px $orange-2,
+  90px 70px 0px $orange-2,
+  100px 70px 0px $orange-2,
+  110px 70px 0px $border,
+  160px 70px 0px $border,
+  170px 70px 0px $yellow,
+  180px 70px 0px $border,
+  190px 70px 0px $border,
+
+  /* Row 9 */
+  10px 80px 0px $border,
+  20px 80px 0px $orange-2,
+  30px 80px 0px $orange-1,
+  40px 80px 0px $orange-1,
+  50px 80px 0px $orange-1,
+  60px 80px 0px $orange-1,
+  70px 80px 0px $orange-2,
+  80px 80px 0px $orange-2,
+  90px 80px 0px $orange-2,
+  100px 80px 0px $orange-2,
+  110px 80px 0px $orange-2,
+  120px 80px 0px $border,
+  160px 80px 0px $border,
+  170px 80px 0px $orange-1,
+  180px 80px 0px $border,
+
+  /* Row 10 */
+  20px 90px 0px $border,
+  30px 90px 0px $border,
+  40px 90px 0px $orange-2,
+  50px 90px 0px $orange-2,
+  60px 90px 0px $orange-2,
+  70px 90px 0px $orange-2,
+  80px 90px 0px $orange-2,
+  90px 90px 0px $orange-2,
+  100px 90px 0px $orange-2,
+  110px 90px 0px $orange-2,
+  120px 90px 0px $orange-2,
+  130px 90px 0px $border,
+  150px 90px 0px $border,
+  160px 90px 0px $orange-1,
+  170px 90px 0px $orange-1,
+  180px 90px 0px $border,
+
+  /* Row 11 */
+  40px 100px 0px $border,
+  50px 100px 0px $border,
+  60px 100px 0px $border,
+  70px 100px 0px $orange-2,
+  80px 100px 0px $orange-2,
+  90px 100px 0px $border,
+  100px 100px 0px $orange-2,
+  110px 100px 0px $orange-2,
+  120px 100px 0px $orange-2,
+  130px 100px 0px $border,
+  140px 100px 0px $border,
+  150px 100px 0px $orange-2,
+  160px 100px 0px $orange-1,
+  170px 100px 0px $border,
+
+  /* Row 12 */
+  50px 110px 0px $border,
+  60px 110px 0px $yellow,
+  70px 110px 0px $yellow,
+  80px 110px 0px $border,
+  90px 110px 0px $orange-2,
+  100px 110px 0px $orange-2,
+  110px 110px 0px $orange-2,
+  120px 110px 0px $orange-2,
+  130px 110px 0px $orange-2,
+  140px 110px 0px $border,
+  150px 110px 0px $orange-2,
+  160px 110px 0px $orange-1,
+  170px 110px 0px $border,
+
+  /* Row 13 */
+  50px 120px 0px $border,
+  60px 120px 0px $yellow,
+  70px 120px 0px $yellow,
+  80px 120px 0px $yellow,
+  90px 120px 0px $border,
+  100px 120px 0px $border,
+  110px 120px 0px $orange-2,
+  120px 120px 0px $orange-2,
+  130px 120px 0px $orange-2,
+  140px 120px 0px $border,
+  150px 120px 0px $orange-2,
+  160px 120px 0px $border,
+
+  /* Row 14 */
+  40px 130px 0px $border,
+  50px 130px 0px $grey,
+  60px 130px 0px $border,
+  70px 130px 0px $yellow,
+  80px 130px 0px $yellow,
+  90px 130px 0px $yellow,
+  100px 130px 0px $orange-2,
+  110px 130px 0px $orange-2,
+  120px 130px 0px $orange-2,
+  130px 130px 0px $orange-2,
+  140px 130px 0px $border,
+  150px 130px 0px $border,
+
+  /* Row 15 */
+  50px 140px 0px $border,
+  60px 140px 0px $border,
+  70px 140px 0px $border,
+  80px 140px 0px $yellow,
+  90px 140px 0px $yellow,
+  100px 140px 0px $orange-2,
+  110px 140px 0px $orange-2,
+  120px 140px 0px $orange-2,
+  130px 140px 0px $border,
+  140px 140px 0px $border,
+
+  /* Row 16 */
+  80px 150px 0px $border,
+  90px 150px 0px $border,
+  100px 150px 0px $border,
+  110px 150px 0px $orange-2,
+  120px 150px 0px $border,
+  130px 150px 0px $border,
+
+  /* Row 17 */
+  90px 160px 0px $border,
+  100px 160px 0px $grey,
+  110px 160px 0px $orange-2,
+  120px 160px 0px $grey,
+  130px 160px 0px $border,
+
+  /* Row 18 */
+  100px 170px 0px $border,
+  110px 170px 0px $border,
+  120px 170px 0px $border,
+  130px 170px 0px $border,
+;
+
+
+$reptincel-box-shadow :
+  /* Row 1 */
+  150px 0px 0px $border,
+
+  /* Row 2 */
+  80px 10px 0px $border,
+  90px 10px 0px $border,
+  140px 10px 0px $border,
+  150px 10px 0px $red,
+  160px 10px 0px $border,
+
+  /* Row 3 */
+  70px 20px 0px $border,
+  80px 20px 0px $orange-2,
+  90px 20px 0px $orange-2,
+  100px 20px 0px $border,
+  130px 20px 0px $border,
+  140px 20px 0px $red,
+  150px 20px 0px $red,
+  160px 20px 0px $border,
+
+  /* Row 4 */
+  60px 30px 0px $border,
+  70px 30px 0px $orange-2,
+  80px 30px 0px $orange-2,
+  90px 30px 0px $orange-2,
+  100px 30px 0px $border,
+  130px 30px 0px $border,
+  140px 30px 0px $red,
+  150px 30px 0px $red,
+  160px 30px 0px $red,
+  170px 30px 0px $border,
+
+  /* Row 5 */
+  40px 40px 0px $border,
+  50px 40px 0px $border,
+  60px 40px 0px $border,
+  70px 40px 0px $orange-2,
+  80px 40px 0px $orange-2,
+  90px 40px 0px $border,
+  130px 40px 0px $border,
+  140px 40px 0px $red,
+  150px 40px 0px $red,
+  160px 40px 0px $red,
+  170px 40px 0px $border,
+
+  /* Row 6 */
+  30px 50px 0px $border,
+  40px 50px 0px $orange-2,
+  50px 50px 0px $border,
+  60px 50px 0px $orange-2,
+  70px 50px 0px $orange-2,
+  80px 50px 0px $border,
+  90px 50px 0px $border,
+  130px 50px 0px $border,
+  140px 50px 0px $red,
+  150px 50px 0px $yellow,
+  160px 50px 0px $border,
+
+  /* Row 7 */
+  20px 60px 0px $border,
+  30px 60px 0px $orange-2,
+  40px 60px 0px $orange-2,
+  50px 60px 0px $orange-2,
+  60px 60px 0px $orange-2,
+  70px 60px 0px $orange-2,
+  80px 60px 0px $orange-2,
+  90px 60px 0px $orange-2,
+  100px 60px 0px $border,
+  140px 60px 0px $border,
+  150px 60px 0px $yellow,
+  160px 60px 0px $orange-2,
+  170px 60px 0px $border,
+  180px 60px 0px $border,
+
+  /* Row 8 */
+  20px 70px 0px $border,
+  30px 70px 0px $orange-2,
+  40px 70px 0px $orange-2,
+  50px 70px 0px $orange-2,
+  60px 70px 0px $orange-2,
+  70px 70px 0px $orange-2,
+  80px 70px 0px $orange-2,
+  90px 70px 0px $orange-2,
+  100px 70px 0px $orange-2,
+  110px 70px 0px $border,
+  150px 70px 0px $border,
+  160px 70px 0px $orange-2,
+  170px 70px 0px $orange-2,
+  180px 70px 0px $border,
+  190px 70px 0px $border,
+
+  /* Row 9 */
+  10px 80px 0px $border,
+  20px 80px 0px $orange-2,
+  30px 80px 0px $orange-2,
+  40px 80px 0px $orange-2,
+  50px 80px 0px $orange-2,
+  60px 80px 0px $orange-2,
+  70px 80px 0px $border,
+  80px 80px 0px $orange-2,
+  90px 80px 0px $orange-2,
+  100px 80px 0px $orange-2,
+  110px 80px 0px $border,
+  160px 80px 0px $border,
+  170px 80px 0px $orange-2,
+  180px 80px 0px $orange-2,
+  190px 80px 0px $orange-2,
+  200px 80px 0px $border,
+
+  /* Row 10 */
+  0px 90px 0px $border,
+  10px 90px 0px $orange-2,
+  20px 90px 0px $orange-2,
+  30px 90px 0px $orange-2,
+  40px 90px 0px $orange-2,
+  50px 90px 0px $orange-2,
+  60px 90px 0px $border,
+  70px 90px 0px $grey,
+  80px 90px 0px $orange-2,
+  90px 90px 0px $orange-2,
+  100px 90px 0px $orange-2,
+  110px 90px 0px $border,
+  120px 90px 0px $border,
+  170px 90px 0px $border,
+  180px 90px 0px $orange-2,
+  190px 90px 0px $orange-2,
+  200px 90px 0px $orange-2,
+  210px 90px 0px $border,
+
+  /* Row 11 */
+  0px 100px 0px $border,
+  10px 100px 0px $orange-2,
+  20px 100px 0px $orange-2,
+  30px 100px 0px $orange-2,
+  40px 100px 0px $orange-2,
+  50px 100px 0px $border,
+  60px 100px 0px $border,
+  70px 100px 0px $grey,
+  80px 100px 0px $border,
+  90px 100px 0px $orange-2,
+  100px 100px 0px $border,
+  110px 100px 0px $orange-2,
+  120px 100px 0px $orange-2,
+  130px 100px 0px $border,
+  140px 100px 0px $border,
+  170px 100px 0px $border,
+  180px 100px 0px $orange-2,
+  190px 100px 0px $orange-2,
+  200px 100px 0px $orange-2,
+  210px 100px 0px $border,
+
+  /* Row 12 */
+  10px 110px 0px $border,
+  20px 110px 0px $orange-2,
+  30px 110px 0px $orange-2,
+  40px 110px 0px $orange-2,
+  50px 110px 0px $orange-2,
+  60px 110px 0px $orange-2,
+  70px 110px 0px $orange-2,
+  80px 110px 0px $border,
+  90px 110px 0px $orange-2,
+  100px 110px 0px $orange-2,
+  110px 110px 0px $orange-2,
+  120px 110px 0px $orange-2,
+  130px 110px 0px $orange-2,
+  140px 110px 0px $orange-2,
+  150px 110px 0px $border,
+  160px 110px 0px $border,
+  170px 110px 0px $border,
+  180px 110px 0px $orange-2,
+  190px 110px 0px $orange-2,
+  200px 110px 0px $orange-2,
+  210px 110px 0px $border,
+
+  /* Row 13 */
+  20px 120px 0px $border,
+  30px 120px 0px $border,
+  40px 120px 0px $orange-2,
+  50px 120px 0px $orange-2,
+  60px 120px 0px $border,
+  70px 120px 0px $border,
+  80px 120px 0px $orange-2,
+  90px 120px 0px $orange-2,
+  100px 120px 0px $orange-2,
+  110px 120px 0px $orange-2,
+  120px 120px 0px $border,
+  130px 120px 0px $orange-2,
+  140px 120px 0px $orange-2,
+  150px 120px 0px $orange-2,
+  160px 120px 0px $border,
+  170px 120px 0px $orange-2,
+  180px 120px 0px $orange-2,
+  190px 120px 0px $orange-2,
+  200px 120px 0px $border,
+  210px 120px 0px $border,
+
+  /* Row 14 */
+  10px 130px 0px $border,
+  20px 130px 0px $orange-2,
+  30px 130px 0px $orange-2,
+  40px 130px 0px $border,
+  50px 130px 0px $border,
+  60px 130px 0px $border,
+  70px 130px 0px $border,
+  80px 130px 0px $yellow,
+  90px 130px 0px $yellow,
+  100px 130px 0px $orange-2,
+  110px 130px 0px $orange-2,
+  120px 130px 0px $border,
+  130px 130px 0px $orange-2,
+  140px 130px 0px $orange-2,
+  150px 130px 0px $orange-2,
+  160px 130px 0px $orange-2,
+  170px 130px 0px $orange-2,
+  180px 130px 0px $orange-2,
+  190px 130px 0px $orange-2,
+  200px 130px 0px $border,
+
+  /* Row 15 */
+  0px 140px 0px $border,
+  10px 140px 0px $grey,
+  20px 140px 0px $orange-2,
+  30px 140px 0px $orange-2,
+  40px 140px 0px $border,
+  70px 140px 0px $border,
+  80px 140px 0px $yellow,
+  90px 140px 0px $yellow,
+  100px 140px 0px $yellow,
+  110px 140px 0px $border,
+  120px 140px 0px $grey,
+  130px 140px 0px $orange-2,
+  140px 140px 0px $orange-2,
+  150px 140px 0px $orange-2,
+  160px 140px 0px $orange-2,
+  170px 140px 0px $border,
+  180px 140px 0px $orange-2,
+  190px 140px 0px $border,
+
+  /* Row 16 */
+  0px 150px 0px $border,
+  10px 150px 0px $orange-2,
+  20px 150px 0px $grey,
+  30px 150px 0px $border,
+  80px 150px 0px $border,
+  90px 150px 0px $yellow,
+  100px 150px 0px $border,
+  110px 150px 0px $border,
+  120px 150px 0px $orange-2,
+  130px 150px 0px $orange-2,
+  140px 150px 0px $orange-2,
+  150px 150px 0px $orange-2,
+  160px 150px 0px $orange-2,
+  170px 150px 0px $border,
+  180px 150px 0px $border,
+
+  /* Row 17 */
+  10px 160px 0px $border,
+  20px 160px 0px $border,
+  70px 160px 0px $border,
+  80px 160px 0px $border,
+  90px 160px 0px $yellow,
+  100px 160px 0px $border,
+  110px 160px 0px $grey,
+  120px 160px 0px $orange-2,
+  130px 160px 0px $orange-2,
+  140px 160px 0px $orange-2,
+  150px 160px 0px $orange-2,
+  160px 160px 0px $orange-2,
+  170px 160px 0px $border,
+
+  /* Row 18 */
+  60px 170px 0px $border,
+  70px 170px 0px $grey,
+  80px 170px 0px $orange-2,
+  90px 170px 0px $border,
+  100px 170px 0px $yellow,
+  110px 170px 0px $border,
+  120px 170px 0px $border,
+  130px 170px 0px $orange-2,
+  140px 170px 0px $orange-2,
+  150px 170px 0px $orange-2,
+  160px 170px 0px $border,
+  170px 170px 0px $border,
+
+  /* Row 19 */
+  70px 180px 0px $border,
+  80px 180px 0px $border,
+  90px 180px 0px $border,
+  100px 180px 0px $border,
+  110px 180px 0px $border,
+  120px 180px 0px $orange-2,
+  130px 180px 0px $orange-2,
+  140px 180px 0px $orange-2,
+  150px 180px 0px $orange-2,
+  160px 180px 0px $border,
+
+  /* Row 20 */
+  120px 190px 0px $border,
+  130px 190px 0px $border,
+  140px 190px 0px $orange-2,
+  150px 190px 0px $border,
+  160px 190px 0px $border,
+
+  /* Row 21 */
+  120px 200px 0px $border,
+  130px 200px 0px $grey,
+  140px 200px 0px $orange-2,
+  150px 200px 0px $grey,
+  160px 200px 0px $border,
+
+  /* Row 22 */
+  130px 210px 0px $border,
+  140px 210px 0px $border,
+  150px 210px 0px $border,
+
+  ;
+
+
+
+/**
+* Stage
+* -----
+*/
+// .stage{ @include full-header-color($stage-background); }
+// @include firefox-vh(".stage");
+
+
+/**
+* Content of the demo :D
+* ----------------------
+*/
+
+.stage {
+  margin-top: 15vh;
+}
+
+.cell{ position: relative; }
+
+
+.salameche{
+  position: absolute;
+  top: 50%; margin-top: -65px;
+  left: 50%; margin-left: -85px;
+  width: 10px; height: 10px;
+  box-shadow: $salameche-box-shadow;
+  
+}
+
+
+.reptincel{
+  position: absolute;
+  top: 50%; margin-top: -110px;
+  left: 50%; margin-left: -105px;
+  width: 10px; height: 10px;
+  box-shadow: $reptincel-box-shadow;
+}
+
+.evolution{
+  position: absolute;
+  top: 50%; left: 50%; 
+  width: 10px; height: 10px;
+  
+  animation: evolutionAnimation 3.5s ease-in-out infinite alternate;
+}
+
+
+/**
+* Keyframes
+* ---------
+*/
+
+@-webkit-keyframes evolutionAnimation{
+  from { 
+    margin-left: -65px; 
+    margin-top: -85px;
+    box-shadow: $salameche-box-shadow;
+  }
+  to { 
+    margin-left: -110px;
+    margin-top: -105px;
+    box-shadow: $reptincel-box-shadow;
+  }
+}
+@keyframes evolutionAnimation{
+  from { 
+    margin-left: -65px;
+    margin-top: -85px;
+    box-shadow: $salameche-box-shadow;
+  }
+  to { 
+    margin-left: -110px;
+    margin-top: -105px;
+    box-shadow: $reptincel-box-shadow;
+  }
+}
+
+
+@media (max-width: 730px){
+  .stage{ 
+    display: block; 
+    
+    .cell{
+      display: block;
+      height: 300px;
+    }
+  }
+}

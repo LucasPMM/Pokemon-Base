@@ -6,6 +6,7 @@ import { PokemonItemComponent } from './pokemon-item/pokemon-item.component';
 import { PokemonTypeComponent } from './pokemon-type/pokemon-type.component';
 import { PokemonEvolutionsComponent } from './pokemon-evolutions/pokemon-evolutions.component';
 import { RouterModule } from '@angular/router';
+import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({
   imports: [
@@ -19,11 +20,13 @@ import { RouterModule } from '@angular/router';
     PokemonItemComponent,
     PokemonTypeComponent,
     PokemonEvolutionsComponent,
+    LoadingComponent,
   ],
   exports: [
     PokemonItemComponent,
     PokemonTypeComponent,
     PokemonEvolutionsComponent,
+    LoadingComponent,
   ],
   entryComponents: [
   ],

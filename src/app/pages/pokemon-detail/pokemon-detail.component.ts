@@ -11,6 +11,8 @@ import { Label } from 'ng2-charts';
 })
 export class PokemonDetailComponent implements OnInit {
 
+  public isLoading: boolean = true;
+
   public barChartOptions: ChartOptions = {
     responsive: true,
     maintainAspectRatio: false,
@@ -39,7 +41,14 @@ export class PokemonDetailComponent implements OnInit {
 
   constructor() { }
 
+  private async getPokemonList(): Promise<void> {
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 4000);
+  }
+
   ngOnInit() {
+    this.getPokemonList();
   }
 
   // events

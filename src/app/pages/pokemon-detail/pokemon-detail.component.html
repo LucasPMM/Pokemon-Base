@@ -7,7 +7,11 @@
     <span>Pikachu</span> 
   </div>
 
-  <div [style.background]="'url(/assets/images/website-background.jpg' + ')'">
+  <div *ngIf="isLoading" class="loading-container">
+    <app-loading></app-loading>
+  </div>
+
+  <div *ngIf="!isLoading" [style.background]="'url(/assets/images/website-background.jpg' + ')'">
     <div class="container" style="background: white;">
       <div class="pokemon-container flex-container">
         <div class="pokemon-img">
