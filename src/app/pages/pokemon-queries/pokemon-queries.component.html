@@ -21,11 +21,9 @@
         <pre><code [languages]="['SQL']" [highlight]="textareaContent" id="code-container" class="syntax-highight html"></code></pre>
       </div>
     </div>
-
-    <div (click)="sendQuery()" class="send-button">
-      <button class="btn">Colsultar</button>
-    </div>
-
+  </div>
+  <div (click)="sendQuery()" class="send-button">
+    <button class="btn">Colsultar</button>
   </div>
 
   <div [hidden]="!formatedJson">
