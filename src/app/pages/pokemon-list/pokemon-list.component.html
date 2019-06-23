@@ -15,9 +15,9 @@
 
   <app-loading *ngIf="isLoading"></app-loading>
 
-  <div [style.background]="'url(/assets/images/website-background.jpg' + ')'">
-    <div *ngIf="!isLoading" class="container list-container">
-      <div [routerLink]="['/pokemon-detail', 0]" class="list-item col-sm-6 col-md-3" *ngFor="let pokemon of pokemonList">
+  <div *ngIf="!isLoading" style="min-height: 100vh;" [style.background]="'url(/assets/images/website-background.jpg' + ')'">
+    <div class="container list-container">
+      <div [routerLink]="['/pokemon-detail', 0]" class="list-item col-sm-6 col-md-3" *ngFor="let pokemon of pokemonList | genericFilter:searchContent">
         <app-pokemon-item [pokemon]="pokemon"></app-pokemon-item>
       </div>
     </div>
