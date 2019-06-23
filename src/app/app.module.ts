@@ -10,6 +10,8 @@ import xml from 'highlight.js/lib/languages/xml';
 import scss from 'highlight.js/lib/languages/scss';
 import typescript from 'highlight.js/lib/languages/typescript';
 import SQL from 'highlight.js/lib/languages/sql';
+import { WrapperService } from './services/wrapper/wrapper.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 export function hljsLanguages() {
@@ -29,12 +31,15 @@ export function hljsLanguages() {
     BrowserModule,
     AppRoutingModule,
     ChartsModule,
+    HttpClientModule,
     ComponentsModule,
     HighlightModule.forRoot({
       languages: hljsLanguages
     })
   ],
-  providers: [],
+  providers: [
+    WrapperService,
+  ],
   exports: [],
   bootstrap: [AppComponent]
 })
