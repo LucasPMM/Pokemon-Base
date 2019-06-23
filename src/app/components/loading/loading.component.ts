@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoadingComponent implements OnInit {
 
-  constructor() { }
+  public selectedLoading = 0;
+
+  constructor() {
+    this.selectedLoading = Math.floor((Math.random() * 2));
+  }
 
   ngOnInit() {
   }

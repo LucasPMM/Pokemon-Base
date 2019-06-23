@@ -1,5 +1,11 @@
-<div class="stage">
-  <div class="cell">
-    <div class="evolution"></div>
+<ng-container *ngIf="selectedLoading === 0">
+  <div class="stage">
+    <div class="cell">
+      <div class="evolution"></div>
+    </div>
   </div>
-</div>
+</ng-container>
+
+<ng-container *ngIf="selectedLoading === 1">
+  <div class="pixel"></div>
+</ng-container>
