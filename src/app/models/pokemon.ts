@@ -4,4 +4,6 @@ export interface PokemonList {
     decricao: string;
     img?: string;
     formatedId?: string;
+    tipo?: string;
+    types?: string[];
 }

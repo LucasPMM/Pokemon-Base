@@ -4,7 +4,7 @@
       *ngFor="let type of typesObj"
       [style.background-color]="type.background"
       [style.color]="type.color"
-      class="badge type-content">{{ type.type }}
+      class="badge type-content">{{ type.type | titlecase }}
     </span>
   </div>
 </span>

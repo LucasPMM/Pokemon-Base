@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { WrapperService } from 'src/app/services/wrapper/wrapper.service';
 import { PokemonList } from 'src/app/models/pokemon';
+import { uniqBy } from 'ramda';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -17,13 +18,32 @@ export class PokemonListComponent implements OnInit {
     private wrapperService: WrapperService,
   ) { }
 
+  private unique(pokemonList: PokemonList[]) {
+    const newList: PokemonList[] = [];
+
+    pokemonList.forEach((pokemon) => {
+      const copy = pokemon;
+      const { id_pokemon } = copy;
+      const filteredList = pokemonList.filter(pokemonItem => pokemonItem.id_pokemon === id_pokemon);
+      copy.types = [];
+      filteredList.forEach((pokemonFiltered) => {
+        copy.types.push(pokemonFiltered.tipo);
+      });
+      newList.push(copy);
+    });
+    const uniqueList = uniqBy(item => item.id_pokemon, newList);
+
+    return uniqueList;
+  }
+
   private async getPokemonList(): Promise<void> {
     setTimeout(() => {
       this.isLoading = false;
     }, 8000);
     try {
-      const query = 'SELECT * FROM Pokemon';
+      const query = 'SELECT * FROM Pokemon NATURAL JOIN TipoPokemon';
       this.pokemonList = await this.wrapperService.getDbData(query);
+      this.pokemonList = this.unique(this.pokemonList);
       this.pokemonList.forEach((pokemon) => {
         const { id_pokemon } = pokemon;
         if (Number(id_pokemon) < 10) {
@@ -33,8 +53,9 @@ export class PokemonListComponent implements OnInit {
         } else {
           pokemon.formatedId = `${Number(id_pokemon)}`;
         }
-        pokemon.img = `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${pokemon.formatedId}.png`
+        pokemon.img = `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${pokemon.formatedId}.png`;
       });
+      this.isLoading = false;
     } catch (e) {
       console.log('Error getting pokemon list', e);
     }
@@ -42,7 +63,6 @@ export class PokemonListComponent implements OnInit {
 
   ngOnInit() {
     this.getPokemonList();
-    console.log('cheguei no pokemon list1!');
   }
 
 }
