@@ -6,15 +6,7 @@
     <p class="pokemon-name">Pikachu</p>
 
     <div class="row types-container">
-      <span class="col-sm-12 col-md-4">
-        <app-pokemon-type type="Eletric" background="yellow" color="black"></app-pokemon-type>
-      </span>
-      <span class="col-sm-12 col-md-4">
-        <app-pokemon-type type="Fire" background="orange" color="black"></app-pokemon-type>
-      </span>
-      <span class="col-sm-12 col-md-4">
-        <app-pokemon-type type="Grass" background="green" color="white"></app-pokemon-type>
-      </span>
+      <app-pokemon-type [types]="['Eletric', 'Fire', 'Grass']"></app-pokemon-type>
     </div>
   </div>
 </div>

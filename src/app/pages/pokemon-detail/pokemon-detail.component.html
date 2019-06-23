@@ -1,11 +1,10 @@
 <div class="content-container">
-  <div class="back-button">
-    <a class="mybtn btn btn-link btn-xs" [routerLink]="['/pokemon-list']"><i class="fa fa-arrow-circle-o-left" style="font-size:2.5rem;"></i></a>
-    <div class="navbar-brand">Retornar a listagem</div>
-  </div>
   <div class="pokemon-name">
-    Pikachu 
-    <span class="pokemon-number">Nº002</span>
+    <div class="back-button">
+      <a class="mybtn btn btn-link btn-xs" [routerLink]="['/pokemon-list']"><i class="fa fa-arrow-circle-o-left" style="font-size:2.5rem;"></i></a>
+      <div class="navbar-brand">Retornar a listagem</div>
+    </div>
+    <span>Pikachu</span> 
   </div>
 
   <div [style.background]="'url(/assets/images/website-background.jpg' + ')'">
@@ -55,28 +54,12 @@
         <div class="pokemon-types">
           <p>Tipo(s)</p>
           <div class="row types-container">
-            <span class="col-sm-12 col-md-4">
-              <app-pokemon-type type="Eletric" background="yellow" color="black"></app-pokemon-type>
-            </span>
-            <span class="col-sm-12 col-md-4">
-              <app-pokemon-type type="Fire" background="orange" color="black"></app-pokemon-type>
-            </span>
-            <span class="col-sm-12 col-md-4">
-              <app-pokemon-type type="Grass" background="green" color="white"></app-pokemon-type>
-            </span>
+            <app-pokemon-type [types]="['Eletric', 'Fire', 'Grass']"></app-pokemon-type>
           </div>
     
           <p>Fraqueza(s)</p>
           <div class="row types-container">
-            <span class="col-sm-12 col-md-4">
-              <app-pokemon-type type="Eletric" background="yellow" color="black"></app-pokemon-type>
-            </span>
-            <span class="col-sm-12 col-md-4">
-              <app-pokemon-type type="Fire" background="orange" color="black"></app-pokemon-type>
-            </span>
-            <span class="col-sm-12 col-md-4">
-              <app-pokemon-type type="Grass" background="green" color="white"></app-pokemon-type>
-            </span>
+            <app-pokemon-type [types]="['Eletric', 'Fire', 'Grass']"></app-pokemon-type>
           </div>
         </div>
       </div>
