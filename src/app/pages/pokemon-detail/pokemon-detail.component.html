@@ -4,7 +4,7 @@
       <a class="mybtn btn btn-link btn-xs" [routerLink]="['/pokemon-list']"><i class="fa fa-arrow-circle-o-left" style="font-size:2.5rem;"></i></a>
       <div class="navbar-brand">Retornar a listagem</div>
     </div>
-    <span>Pikachu</span> 
+    <span>{{ pokemonItem?.nome }}</span> 
   </div>
 
   <div *ngIf="isLoading" class="loading-container">
@@ -15,10 +15,10 @@
     <div class="container" style="background: white;">
       <div class="pokemon-container flex-container">
         <div class="pokemon-img">
-          <img src="assets/images/default-pokemon.jpg">  
+          <img [src]="pokemonItem?.img ? pokemonItem?.img : 'assets/images/default-pokemon.jpg'">  
         </div>
-        <div class="pokemon-informations">
-          <p>Bulbasaur can be seen napping in bright sunlight. There is a seed on its back. By soaking up the sun's rays, the seed grows progressively larger.</p>
+        <!-- <div class="pokemon-informations">
+          <p>{{ pokemonItem?.descricao }}</p>
           <div class="flex-container">
             <div>
               <p class="description">Altura</p>
@@ -35,7 +35,7 @@
               <p class="info">Overgrow</p>
             </div>  
           </div>
-        </div>
+        </div> -->
       </div>
     
       <div class="pokemon-data pokemon-container flex-container">
@@ -58,18 +58,13 @@
         <div class="pokemon-types">
           <p>Tipo(s)</p>
           <div class="row types-container">
-            <app-pokemon-type [types]="['Eletric', 'Fire', 'Grass']"></app-pokemon-type>
-          </div>
-    
-          <p>Fraqueza(s)</p>
-          <div class="row types-container">
-            <app-pokemon-type [types]="['Eletric', 'Fire', 'Grass']"></app-pokemon-type>
+            <app-pokemon-type [types]="pokemonItem?.types"></app-pokemon-type>
           </div>
         </div>
       </div>
   
       <div class="evolutions">
-        <app-pokemon-evolutions></app-pokemon-evolutions>
+        <app-pokemon-evolutions [idEvolutions]="pokemonItem?.idEvolucoes" [imgEvolutions]="pokemonItem?.imgEvolucoes"></app-pokemon-evolutions>
       </div>
     </div>
   </div>

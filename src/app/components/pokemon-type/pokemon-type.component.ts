@@ -22,6 +22,7 @@ export class PokemonTypeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    if (!this.types) { return; }
     this.types.forEach((type: string) => {
       let color;
       let background;

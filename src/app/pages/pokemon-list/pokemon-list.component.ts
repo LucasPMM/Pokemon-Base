@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WrapperService } from 'src/app/services/wrapper/wrapper.service';
-import { PokemonList } from 'src/app/models/pokemon';
+import { PokemonType } from 'src/app/models/pokemon';
 import { uniqBy } from 'ramda';
 
 @Component({
@@ -12,14 +12,14 @@ export class PokemonListComponent implements OnInit {
 
   public searchContent: string = '';
   public isLoading: boolean = true;
-  public pokemonList: PokemonList[] = [];
+  public pokemonList: PokemonType[] = [];
 
   constructor(
     private wrapperService: WrapperService,
   ) { }
 
-  private unique(pokemonList: PokemonList[]) {
-    const newList: PokemonList[] = [];
+  private unique(pokemonList: PokemonType[]) {
+    const newList: PokemonType[] = [];
 
     pokemonList.forEach((pokemon) => {
       const copy = pokemon;
@@ -42,7 +42,7 @@ export class PokemonListComponent implements OnInit {
     }, 8000);
     try {
       const query = 'SELECT * FROM Pokemon NATURAL JOIN TipoPokemon';
-      this.pokemonList = await this.wrapperService.getDbData(query);
+      this.pokemonList = await this.wrapperService.getDbData(query) as any;
       this.pokemonList = this.unique(this.pokemonList);
       this.pokemonList.forEach((pokemon) => {
         const { id_pokemon } = pokemon;

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { WrapperEndpoints } from './wrapper.endpoints';
+import { PokemonType } from 'src/app/models/pokemon';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class WrapperService {
     private httpClient: HttpClient,
   ) { }
 
-  public async getDbData(query: string): Promise<any> {
+  public async getDbData(query: string): Promise<PokemonType> {
     const endpoint = WrapperEndpoints.db();
 
     const params = new HttpParams({

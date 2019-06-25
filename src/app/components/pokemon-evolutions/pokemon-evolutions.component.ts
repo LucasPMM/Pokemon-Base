@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-pokemon-evolutions',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pokemon-evolutions.component.scss']
 })
 export class PokemonEvolutionsComponent implements OnInit {
+
+  @Input() idEvolutions: number[];
+  @Input() imgEvolutions: string[];
 
   public pokemonEvolutions = [1, 2, 3];
 
