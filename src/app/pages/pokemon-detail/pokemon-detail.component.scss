@@ -64,6 +64,12 @@
     justify-content: space-between;
     padding-left: 80px;
     padding-right: 80px;
+
+    height: 40vh;
+
+    .pokemon-description {
+        width: 50%;
+    }
 }
 
 .loading-container {

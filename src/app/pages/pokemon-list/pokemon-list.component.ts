@@ -55,7 +55,7 @@ export class PokemonListComponent implements OnInit {
         }
         pokemon.img = `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${pokemon.formatedId}.png`;
       });
-      this.isLoading = false;
+      // this.isLoading = false;
     } catch (e) {
       console.log('Error getting pokemon list', e);
     }

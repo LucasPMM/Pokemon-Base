@@ -53,18 +53,37 @@ export class PokemonDetailComponent implements OnInit {
   ) { }
 
   private unique(pokemonList: PokemonType[]) {
-    pokemonList.forEach((pokemon) => {
-      const id_pokemon = this.idPokemon;
-      if (Number(id_pokemon) < 10) {
-        pokemon.formatedId = `00${Number(id_pokemon)}`;
-      } else if (Number(id_pokemon) < 100) {
-        pokemon.formatedId = `0${Number(id_pokemon)}`;
-      } else {
-        pokemon.formatedId = `${Number(id_pokemon)}`;
-      }
-      pokemon.img = `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${pokemon.formatedId}.png`;
-    });
+    // pokemonList.forEach((pokemon) => {
+    //   const id_pokemon = this.idPokemon;
+    //   if (Number(id_pokemon) < 10) {
+    //     pokemon.formatedId = `00${Number(id_pokemon)}`;
+    //   } else if (Number(id_pokemon) < 100) {
+    //     pokemon.formatedId = `0${Number(id_pokemon)}`;
+    //   } else {
+    //     pokemon.formatedId = `${Number(id_pokemon)}`;
+    //   }
+    //   pokemon.img = `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${pokemon.formatedId}.png`;
+    // });
 
+    // const newList: PokemonType[] = [];
+
+    // pokemonList.forEach((pokemon) => {
+    //   const copy = pokemon;
+    //   const { id_pokemon } = copy;
+    //   const filteredList = pokemonList.filter(pokemonItem => pokemonItem.id_pokemon === id_pokemon);
+    //   copy.types = [];
+    //   copy.evolucoes = [];
+    //   filteredList.forEach((pokemonFiltered) => {
+    //     copy.types.push(pokemonFiltered.tipo);
+    //     copy.evolucoes.push(pokemonFiltered.evo_nome);
+    //   });
+    //   newList.push(copy);
+    // });
+    // const uniqueList = uniqBy(item => item.id_pokemon, newList);
+    // if (!uniqueList.length) { return null; }
+    // uniqueList[0].types = this.uniqArr(uniqueList[0].types);
+    // uniqueList[0].evolucoes = this.uniqArr(uniqueList[0].evolucoes);
+    // return uniqueList[0];
     const newList: PokemonType[] = [];
 
     pokemonList.forEach((pokemon) => {
@@ -72,18 +91,14 @@ export class PokemonDetailComponent implements OnInit {
       const { id_pokemon } = copy;
       const filteredList = pokemonList.filter(pokemonItem => pokemonItem.id_pokemon === id_pokemon);
       copy.types = [];
-      copy.evolucoes = [];
       filteredList.forEach((pokemonFiltered) => {
         copy.types.push(pokemonFiltered.tipo);
-        copy.evolucoes.push(pokemonFiltered.evo_nome);
       });
       newList.push(copy);
     });
     const uniqueList = uniqBy(item => item.id_pokemon, newList);
-    if (!uniqueList.length) { return null; }
-    uniqueList[0].types = this.uniqArr(uniqueList[0].types);
-    uniqueList[0].evolucoes = this.uniqArr(uniqueList[0].evolucoes);
-    return uniqueList[0];
+
+    return uniqueList;
   }
 
   private uniqArr(a) {
@@ -116,6 +131,7 @@ export class PokemonDetailComponent implements OnInit {
         console.log('Error on getting evolutions', e);
       }
     });
+    // Ordenar as evoluções:
     return pokemon;
   }
 
@@ -123,19 +139,40 @@ export class PokemonDetailComponent implements OnInit {
     setTimeout(() => {
       this.isLoading = false;
     }, 4000);
+    // try {
+    //   // tslint:disable-next-line: max-line-length
+    //   const pokemonEvolutionsQuery = `SELECT p1.nome, p1.descricao, tipo, p2.nome AS evo_nome FROM (((Pokemon AS p1 NATURAL JOIN TipoPokemon AS tp) JOIN Evolucao AS ev ON ev.id_de = p1.id_pokemon) JOIN Pokemon AS p2 ON ev.id_para = p2.id_pokemon) WHERE p1.id_pokemon = ${this.idPokemon}`;
+    //   this.pokemonDetail = await this.wrapperService.getDbData(pokemonEvolutionsQuery) as any;
+    //   this.pokemonDetail = this.unique(this.pokemonDetail);
+    //   this.pokemonItem = this.pokemonDetail as any;
+    //   if (this.pokemonItem) {
+    //     this.pokemonItem = await this.getPokemonIdEvolutions(this.pokemonItem);
+    //   }
+    //   // console.log('this.pokemonDetail', this.pokemonDetail);
+    //   this.isLoading = false;
+    // } catch (e) {
+    //   console.log('Error getting pokemon detail');
+    // }
     try {
-      // tslint:disable-next-line: max-line-length
-      const pokemonEvolutionsQuery = `SELECT p1.nome, p1.descricao, tipo, p2.nome AS evo_nome FROM (((Pokemon AS p1 NATURAL JOIN TipoPokemon AS tp) JOIN Evolucao AS ev ON ev.id_de = p1.id_pokemon) JOIN Pokemon AS p2 ON ev.id_para = p2.id_pokemon) WHERE p1.id_pokemon = ${this.idPokemon}`;
-      this.pokemonDetail = await this.wrapperService.getDbData(pokemonEvolutionsQuery) as any;
-      this.pokemonDetail = this.unique(this.pokemonDetail);
-      this.pokemonItem = this.pokemonDetail as any;
-      if (this.pokemonItem) {
-        this.pokemonItem = await this.getPokemonIdEvolutions(this.pokemonItem);
-      }
-      console.log('this.pokemonDetail', this.pokemonDetail);
+      const query = `SELECT * FROM Pokemon NATURAL JOIN TipoPokemon WHERE id_pokemon = ${this.idPokemon}`;
+      let pokemonList = await this.wrapperService.getDbData(query) as any;
+      pokemonList = this.unique(pokemonList);
+      pokemonList.forEach((pokemon) => {
+        const { id_pokemon } = pokemon;
+        if (Number(id_pokemon) < 10) {
+          pokemon.formatedId = `00${Number(id_pokemon)}`;
+        } else if (Number(id_pokemon) < 100) {
+          pokemon.formatedId = `0${Number(id_pokemon)}`;
+        } else {
+          pokemon.formatedId = `${Number(id_pokemon)}`;
+        }
+        pokemon.img = `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${pokemon.formatedId}.png`;
+      });
+      this.pokemonItem = pokemonList[0];
+      console.log('detalhe', this.pokemonDetail);
       this.isLoading = false;
     } catch (e) {
-      console.log('Error getting pokemon detail');
+      console.log('Error getting pokemon list', e);
     }
   }
 

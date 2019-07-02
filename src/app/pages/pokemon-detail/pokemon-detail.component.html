@@ -39,8 +39,8 @@
       </div>
     
       <div class="pokemon-data pokemon-container flex-container">
-        <div>
-          <div>
+        <div class="pokemon-description">
+          <!-- <div>
             <div style="display: block">
               <canvas baseChart
                 height="300px"
@@ -52,7 +52,8 @@
                 [chartType]="barChartType">
               </canvas>
             </div>
-          </div>
+          </div> -->
+          <p>{{ pokemonItem?.descricao }}</p>
         </div>
     
         <div class="pokemon-types">
@@ -62,10 +63,10 @@
           </div>
         </div>
       </div>
-  
+<!--   
       <div class="evolutions">
         <app-pokemon-evolutions [idEvolutions]="pokemonItem?.idEvolucoes" [imgEvolutions]="pokemonItem?.imgEvolucoes"></app-pokemon-evolutions>
-      </div>
+      </div> -->
     </div>
   </div>
 
