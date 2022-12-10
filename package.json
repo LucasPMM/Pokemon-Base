@@ -30,7 +30,7 @@
     "chartjs-plugin-datalabels": "^0.6.0",
     "codelyzer": "~4.5.0",
     "core-js": "^2.5.4",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "font-awesome": "^4.7.0",
     "highlight.js": "^9.15.8",
     "jasmine-core": "~2.99.1",
